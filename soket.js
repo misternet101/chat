@@ -1,3 +1,5 @@
+const { env } = require('process');
+
 console.log('runing');
 const app = require('express')();
 const server = require('http').createServer(app);
@@ -16,4 +18,4 @@ io.sockets.on('connection', socket => {
 
 
 
-server.listen(5000);
+server.listen(process.env.PORT || 5000);
